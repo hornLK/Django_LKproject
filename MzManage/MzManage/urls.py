@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from common import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index,name="common_index"),
     path('qcloud/',include('qcloudManage.urls')),
     path('cmdb',include('CMDB.urls')),
 ]
